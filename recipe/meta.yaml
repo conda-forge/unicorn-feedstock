@@ -47,7 +47,7 @@ outputs:
         - python >=2.7
       run:
         - python >=2.7
-        - {{ pin_subpackage("unicorn", exact=True) }}
+        - {{ pin_subpackage("unicorn", max_pin="x.x.x") }}
     test:
       imports:
         - unicorn
