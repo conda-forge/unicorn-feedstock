@@ -1,5 +1,5 @@
 {% set name = "unicorn" %}
-{% set version = "1.0.3" %}
+{% set version = "2.0.1.post1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/unicorn-engine/unicorn/archive/{{ version.replace("rc", "-rc") }}.tar.gz
-  sha256: 64fba177dec64baf3f11c046fbb70e91483e029793ec6a3e43b028ef14dc0d65
+  sha256: 6b276c857c69ee5ec3e292c3401c8c972bae292e0e4cb306bb9e5466c0f14737
   folder: source
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('unicorn', max_pin='x.x') }}
