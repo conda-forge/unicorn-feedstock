@@ -243,4 +243,5 @@ Feedstock Maintainers
 =====================
 
 * [@chrisburr](https://github.com/chrisburr/)
+* [@pavelzw](https://github.com/pavelzw/)
 
