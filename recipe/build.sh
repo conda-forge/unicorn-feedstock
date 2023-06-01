@@ -9,6 +9,5 @@ cmake -B build \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_PREFIX=${PREFIX}
-    source
 
 cmake --build build/ --target install -j${CPU_COUNT}
