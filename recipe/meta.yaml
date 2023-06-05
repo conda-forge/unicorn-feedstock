@@ -39,7 +39,6 @@ outputs:
       script:
         - export LIBUNICORN_PATH="${PREFIX}"
         - mkdir source/bindings/python/src
-        - cp source/pkgconfig.mk source/bindings/python/src
         - ${PYTHON} -m pip install source/bindings/python/ -vv
     requirements:
       host:
