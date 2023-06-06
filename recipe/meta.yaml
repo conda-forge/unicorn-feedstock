@@ -2,7 +2,7 @@
 {% set version = "2.0.1.post1" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}-split
   version: {{ version }}
 
 source:
@@ -41,7 +41,10 @@ outputs:
         - mkdir source/bindings/python/src
         - ${PYTHON} -m pip install source/bindings/python/ -vv
     requirements:
+      build:
+        - {{ pin_subpackage("unicorn", exact=True) }}
       host:
+        - {{ pin_subpackage("unicorn", exact=True) }}
         - pip
         - python >=2.7
       run:
@@ -83,6 +86,7 @@ about:
   dev_url: https://github.com/unicorn-engine/unicorn
 
 extra:
+  feedstock-name: unicorn
   recipe-maintainers:
     - chrisburr
     - pavelzw
