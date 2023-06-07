@@ -36,7 +36,9 @@ outputs:
     build:
       skip: true  # [win]
       noarch: python
-      script: build_python_bindings.sh
+      script: 
+        - ls -lah
+        - build_python_bindings.sh
     requirements:
       build:
         - {{ pin_subpackage("unicorn", exact=True) }}
