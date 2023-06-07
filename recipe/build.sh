@@ -5,6 +5,7 @@ if [[ "${target_platform}" == linux-* ]]; then
     export LDFLAGS="-lrt ${LDFLAGS}"
 fi
 
+printenv
 echo $PREFIX
 
 cmake -B build -LAH \
