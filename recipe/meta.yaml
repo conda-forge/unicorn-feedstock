@@ -38,6 +38,8 @@ outputs:
       noarch: python
       script: 
         - ls -lah
+        - ls -lah source
+        - ls -lah ..
         - build_python_bindings.sh
     requirements:
       build:
