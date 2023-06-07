@@ -38,7 +38,7 @@ outputs:
       skip: true  # [win]
       noarch: python
       script:
-        - export LIBUNICORN_PATH="${PREFIX}"
+        - export LIBUNICORN_PATH="${PREFIX}/lib"
         - mkdir source/bindings/python/src
         - cd source/bindings/python
         - python setup.py build 

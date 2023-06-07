@@ -2,9 +2,9 @@
 
 cd source
 
-if [[ "${target_platform}" == linux-* ]]; then
-  export LDFLAGS="-lrt ${LDFLAGS}"
-fi
+# if [[ "${target_platform}" == linux-* ]]; then
+export LDFLAGS="-lrt ${LDFLAGS}"
+# fi
 
 cmake -B build -LAH \
       -DCMAKE_BUILD_TYPE="Release"  \
