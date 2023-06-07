@@ -7,6 +7,7 @@ fi
 
 printenv
 echo $PREFIX
+ls $PREFIX
 
 cmake -B build -LAH \
       -DCMAKE_BUILD_TYPE="Release"  \
