@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - pkg-config
     - cmake
     - make  # [unix]
     - ninja  # [win]
@@ -36,14 +37,18 @@ outputs:
     build:
       skip: true  # [win]
       noarch: python
-      script: 
-        - ls -lah
-        - ls -lah source
-        - ls -lah ..
-        - find ../.. -type f -name "build_python_bindings.sh"
-        - export LIBUNICORN_PATH="${PREFIX}/lib"
-        - ls -lah "${LIBUNICORN_PATH}"
-        - ${PYTHON} -m pip install source/bindings/python/ -vv
+      script:
+        - export LIBUNICORN_PATH="${PREFIX}"
+        - mkdir source/bindings/python/src
+        - cd source/bindings/python
+        - python setup.py build 
+        # - ls -lah
+        # - ls -lah source
+        # - ls -lah ..
+        # - find ../.. -type f -name "build_python_bindings.sh"
+        # - export LIBUNICORN_PATH="${PREFIX}/lib"
+        # - ls -lah "${LIBUNICORN_PATH}"
+        # - ${PYTHON} -m pip install source/bindings/python/ -vv
         # - build_python_bindings.sh
     requirements:
       build:
