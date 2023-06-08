@@ -3,37 +3,6 @@ About unicorn-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/unicorn-feedstock/blob/main/LICENSE.txt)
 
-About unicorn
--------------
-
-Home: https://www.unicorn-engine.org/
-
-Package license: LGPL-2.0-only AND GPL-2.0-only AND GPL-2.0-or-later
-
-Summary: Unicorn CPU emulator framework (ARM, AArch64, M68K, Mips, Sparc, X86)
-
-Development: https://github.com/unicorn-engine/unicorn
-
-Documentation: https://www.unicorn-engine.org/docs/
-
-Unicorn is a lightweight, multi-platform, multi-architecture CPU emulator framework
-based on [QEMU](http://qemu.org).
-
-Unicorn offers some unparalleled features:
-
-- Multi-architecture: ARM, ARM64 (ARMv8), M68K, MIPS, SPARC, and X86 (16, 32, 64-bit)
-- Clean/simple/lightweight/intuitive architecture-neutral API
-- Implemented in pure C language, with bindings for Crystal, Clojure, Visual Basic, Perl,
-  Rust, Ruby, Python, Java, .NET, Go, Delphi/Free Pascal, Haskell, Pharo, and Lua.
-- Native support for Windows & *nix (with Mac OSX, Linux, *BSD & Solaris confirmed)
-- High performance via Just-In-Time compilation
-- Support for fine-grained instrumentation at various levels
-- Thread-safety by design
-- Distributed under free software license GPLv2
-
-About python-unicorn
---------------------
-
 Home: https://www.unicorn-engine.org/
 
 Package license: LGPL-2.0-only AND GPL-2.0-only AND GPL-2.0-or-later
