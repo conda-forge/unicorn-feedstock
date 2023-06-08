@@ -60,7 +60,7 @@ outputs:
       build:
         - {{ pin_subpackage("unicorn", exact=True) }}
       host:
-        - {{ pin_subpackage("unicorn", exact=True) }}
+        # - {{ pin_subpackage("unicorn", exact=True) }}
         - pip
         - python >=2.7
       run:
