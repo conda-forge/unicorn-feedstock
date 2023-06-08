@@ -34,6 +34,9 @@ outputs:
       commands:
         - test -f $PREFIX/lib/libunicorn$SHLIB_EXT  # [unix]
         - if not exist %LIBRARY_BIN%\\unicorn.dll exit 1  # [win]
+    requirements:
+      build:
+        - cmake
 
   - name: python-unicorn
     build:
