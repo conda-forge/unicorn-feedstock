@@ -5,7 +5,7 @@ if [[ "${target_platform}" == linux-* ]]; then
     export LDFLAGS="-lrt ${LDFLAGS}"
 fi
 
-printenv
+# printenv
 echo $PREFIX
 ls $PREFIX
 
@@ -18,9 +18,14 @@ cmake -B build -LAH \
 
 
 cmake --build build -j${CPU_COUNT}
-cmake --install build
 
 
+# echo "ls $PREFIX"
+# ls $PREFIX
+# echo "ls $PREFIX/lib"
+# ls $PREFIX/lib
+
+# exit 1
 # cmake -B build \
 #     ${CMAKE_ARGS} -LAH \
 #     -DCMAKE_C_COMPILER=${CC} \

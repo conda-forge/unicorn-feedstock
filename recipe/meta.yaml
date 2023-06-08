@@ -25,30 +25,33 @@ requirements:
     - ninja  # [win]
   host:
 
-test:
-  commands:
-    - test -f $PREFIX/lib/libunicorn$SHLIB_EXT  # [unix]
-    - if not exist %LIBRARY_BIN%\\unicorn.dll exit 1  # [win]
-
 outputs:
   - name: unicorn
+    build:
+      script:
+        - cmake --install source/build
+    test:
+      commands:
+        - test -f $PREFIX/lib/libunicorn$SHLIB_EXT  # [unix]
+        - if not exist %LIBRARY_BIN%\\unicorn.dll exit 1  # [win]
 
   - name: python-unicorn
     build:
       skip: true  # [win]
       noarch: python
       script:
+        - ls $PREFIX/lib
         - export LIBUNICORN_PATH="${PREFIX}/lib"
-        - mkdir source/bindings/python/src
+        # - mkdir source/bindings/python/src
         - cd source/bindings/python
-        - python setup.py build
+        # - python setup.py build
         # - ls -lah
         # - ls -lah source
         # - ls -lah ..
         # - find ../.. -type f -name "build_python_bindings.sh"
         # - export LIBUNICORN_PATH="${PREFIX}/lib"
         # - ls -lah "${LIBUNICORN_PATH}"
-        # - ${PYTHON} -m pip install source/bindings/python/ -vv
+        - ${PYTHON} -m pip install . -vv
         # - build_python_bindings.sh
     requirements:
       build:
