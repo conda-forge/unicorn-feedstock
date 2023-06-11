@@ -56,7 +56,7 @@ outputs:
       host:
         - {{ pin_subpackage("unicorn", exact=True) }}
         - pip
-        - python >=3.6
+        - python
       run:
         - python >=3.6
         - {{ pin_subpackage("unicorn", exact=True) }}
