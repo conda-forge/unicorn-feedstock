@@ -36,25 +36,19 @@ outputs:
         - if not exist %LIBRARY_BIN%\\unicorn.dll exit 1  # [win]
     requirements:
       build:
+        - {{ compiler('c') }}
+        - pkg-config
         - cmake
+        - make  # [unix]
+        - ninja  # [win]
 
   - name: python-unicorn
     build:
       skip: true  # [win]
       script:
-        - ls $PREFIX/lib
         - export LIBUNICORN_PATH="${PREFIX}/lib"
-        # - mkdir source/bindings/python/src
         - cd source/bindings/python
-        # - python setup.py build
-        # - ls -lah
-        # - ls -lah source
-        # - ls -lah ..
-        # - find ../.. -type f -name "build_python_bindings.sh"
-        # - export LIBUNICORN_PATH="${PREFIX}/lib"
-        # - ls -lah "${LIBUNICORN_PATH}"
         - ${PYTHON} -m pip install . -vv
-        # - build_python_bindings.sh
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
@@ -62,9 +56,9 @@ outputs:
       host:
         - {{ pin_subpackage("unicorn", exact=True) }}
         - pip
-        - python >=2.7
+        - python >=3.6
       run:
-        - python >=2.7
+        - python >=3.6
         - {{ pin_subpackage("unicorn", exact=True) }}
     test:
       imports:
@@ -106,3 +100,4 @@ extra:
   recipe-maintainers:
     - chrisburr
     - pavelzw
+    - '0xbe7a'
