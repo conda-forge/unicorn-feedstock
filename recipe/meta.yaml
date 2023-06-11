@@ -58,7 +58,7 @@ outputs:
         - pip
         - python
       run:
-        - python >=3.6
+        - python
         - {{ pin_subpackage("unicorn", exact=True) }}
     test:
       imports:
