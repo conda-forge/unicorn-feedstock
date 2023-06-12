@@ -6,7 +6,7 @@ if [[ "${target_platform}" == linux-* ]]; then
     export LDFLAGS="-lrt ${LDFLAGS}"
 fi
 
-cmake -B build -LAH \
+cmake ${CMAKE_ARGS} -B build -LAH \
       -DCMAKE_BUILD_TYPE="Release"  \
       -DCMAKE_PREFIX_PATH=$PREFIX \
       -DCMAKE_INSTALL_LIBDIR=lib \
