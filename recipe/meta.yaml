@@ -46,9 +46,8 @@ outputs:
         - ninja  # [win]
 
   - name: python-unicorn
-    build:
-      script: build_python_bindings.sh   # [not win]
-      script: build_python_bindings.bat  # [win]
+    script: build_python_bindings.sh   # [not win]
+    script: build_python_bindings.bat  # [win]
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
