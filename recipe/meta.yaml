@@ -47,7 +47,6 @@ outputs:
 
   - name: python-unicorn
     build:
-      skip: true  # [win]
       script:
         - export LIBUNICORN_PATH="${PREFIX}/lib"
         # setuptools-scm cannot see a version in the release tarball
